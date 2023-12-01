@@ -3,7 +3,7 @@ pipeline {
 
     tools {
         // Ensure the desired Go version is installed for all stages
-        go '1.19'
+        go '1.17'
     }
 
         stage('Build') {
@@ -17,8 +17,10 @@ pipeline {
             steps {
                 // Deploy your application
                 // This is a placeholder, replace with your actual deployment steps
-                sh 'goapi'
+                sh './goapi' // Assuming it's in the same directory
+                sh 'curl localhost:8080/todos'
             }
         }
+
     }
 }
