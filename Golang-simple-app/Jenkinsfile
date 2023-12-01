@@ -1,25 +1,33 @@
 pipeline {
     agent any
+
     tools {
-        // Ensure the desired Go version is installed for all stages
-        go '1.17'
+        go 'Go 1.17' // Make sure to configure Go in Jenkins Global Tool Configuration with the name 'Go 1.17'
     }
+
     stages {
         stage('Build') {
             steps {
-                // Build your application
-                sh 'go build -o goapi'
+                script {
+                    // Build your Go application
+                    sh 'go build -o goapi'
+                }
             }
         }
 
-        stage('run') {
+        stage('Run') {
             steps {
-                // Deploy your application
-                // This is a placeholder, replace with your actual deployment steps
-                sh './goapi' // Assuming it's in the same directory
-                sh 'curl localhost:8080/todos'
+                script {
+                    // Run your Go application
+                    sh './goapi'
+                }
             }
         }
+    }
 
+    post {
+        always {
+            cleanWs()
+        }
     }
 }
