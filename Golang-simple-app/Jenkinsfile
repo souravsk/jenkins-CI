@@ -1,11 +1,10 @@
 pipeline {
     agent any
-
     tools {
         // Ensure the desired Go version is installed for all stages
         go '1.17'
     }
-
+    srages {
         stage('Build') {
             steps {
                 // Build your application
@@ -22,4 +21,5 @@ pipeline {
             }
         }
 
+    }
 }
