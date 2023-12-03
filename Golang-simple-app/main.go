@@ -98,7 +98,7 @@ func toggleTodoStatus(context *gin.Context) {
 
 func main() {
 	router := gin.Default()
-	router.GET("/todos", getTodos)
+	router.GET("/", getTodos)
 	router.GET("/todos/:id", getTodo)
 	router.PATCH("/todos/:id", toggleTodoStatus)
 	router.POST("/todos", addTodo)
