@@ -98,10 +98,10 @@ docker run --name netflix-clone-website --rm -d -p 80:80 netflix-clone
 
 
 TO Run Jenkins 
-docker run -p 8080:8080 -p 50000:50000 --restart=on-failure -v jenkins_home:/var/jenkins_home jenkins/jenkins:lts-jdk17
+docker -d run -p 8080:8080 -p 50000:50000 --restart=on-failure -v jenkins_home:/var/jenkins_home jenkins/jenkins:lts-jdk17
 
 To Run Sonarquke
-docker run --rm \
+docker -d run --rm \
     -p 9000:9000 \
     -v sonarqube_extensions:/opt/sonarqube/extensions \
     sonarqube:lts-community
