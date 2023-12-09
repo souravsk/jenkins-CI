@@ -93,3 +93,15 @@ docker run --name netflix-clone-website --rm -d -p 80:80 netflix-clone
 - Replace bundler([Vite](https://vitejs.dev/guide)) with [Turbopack](https://turbo.build/pack/docs/why-turbopack). Turbopack is introduced in Next.js conf recently. It's very fast but it's nor ready to use right now. it just support Next.js, and they plan to support all others as soon as possible. so if it's ready to use, replace [Vite](https://vitejs.dev/guide) with [Turbopack](https://turbo.build/pack/docs/why-turbopack).
 - Add accessibilities for better UX.
 - Add Tests.
+
+
+
+
+TO Run Jenkins 
+docker run -p 8080:8080 -p 50000:50000 --restart=on-failure -v jenkins_home:/var/jenkins_home jenkins/jenkins:lts-jdk17
+
+To Run Sonarquke
+docker run --rm \
+    -p 9000:9000 \
+    -v sonarqube_extensions:/opt/sonarqube/extensions \
+    sonarqube:lts-community
