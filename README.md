@@ -106,7 +106,7 @@ docker run -d -p 8080:8080 -p 50000:50000 --restart=on-failure -v jenkins_home:/
 docker run -d -p 9000:9000 --restart=on-failure -v sonarqube_extensions:/opt/sonarqube/extensions sonarqube:lts-community
 ```
 
-## How to setup Sonarquke on jenkins
+## How to setup Sonarquke on jenkins for docker
 
 Setp 1 - First Install Sonarquke plugins. The name of the Plugins is "SonarQube Scanner for Jenkins"
 
@@ -114,4 +114,4 @@ Step 2 - Then go to Tool on Manage Jenkins and search for SonarQube Scanner Inst
 Name - SonarScanner
 THen Apply and Save
 
-Step 3 - Now go to Systeme on Manage Jenkins and search for SonarQube Servers then click on add then Add Name and server URL of Sonarquke and also token
+Step 3 - Now go to Systeme on Manage Jenkins and search for SonarQube Servers then click on add then Add Name and server URL of Sonarquke and also token.
